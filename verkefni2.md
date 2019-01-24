@@ -1,3 +1,5 @@
+--------------------------------------------------------------------------------------------
+```javascript
 1. Búðu til object með upplýsingar um þig; nafn, kennitala, heimilsfang, heimasími og gsm.
 	
 	let User = {
