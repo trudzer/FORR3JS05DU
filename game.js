@@ -82,6 +82,13 @@ function drawBall() {                                                           
   ctx.fill();                                                                       //lokunar staður
   ctx.closePath();
 }
+function drawBall2() {                                                               //teiknar upp hring
+  ctx.beginPath();                                                                  //byrjunar staður
+  ctx.arc(x, y, ballRadius, 0, Math.PI*2);                                          //formúla fyrir að teikna hring
+  ctx.fillStyle = "#FF0000";                                                        //gerir hlutinn rauðann
+  ctx.fill();                                                                       //lokunar staður
+  ctx.closePath();
+}
 function drawPaddle() {                                                             //teiknar player-inn
   ctx.beginPath();
   ctx.rect(paddleX, canvas.height-paddleHeight-15, paddleWidth, paddleHeight);      //býr til kassa og setur hann í miðjuna á skjáinum
@@ -121,6 +128,7 @@ function draw() {                                                               
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   drawBricks();
   drawBall();
+  drawBall2();
   drawPaddle();
   drawScore();
   drawLives();
