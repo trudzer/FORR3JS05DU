@@ -3,8 +3,8 @@ let ctx = canvas.getContext("2d");                                              
 let ballRadius = 15;                                                                //til breytu fyrir radius bolta
 let x = canvas.width/2;                                                             //býr til breytu x sem verður í miðju canvas-inu
 let y = canvas.height-30;                                                           //býr til breytu y sem er sett á sérstaka hæð í canvas-inu
-let dx = 4;                                                                         //býr til breytu dx sem setur hraða á x gildin
-let dy = -4;                                                                        //býr til breytu dy sem setur hraða á y gildin
+let dx = 6;                                                                         //býr til breytu dx sem setur hraða á x gildin
+let dy = -6;                                                                        //býr til breytu dy sem setur hraða á y gildin
 let paddleHeight = 15;                                                              //býr til breytu fyrir player object-ið height
 let paddleWidth = 150;                                                              //býr til breytu fyrir player object-ið width
 let paddleX = (canvas.width-paddleWidth)/2;                                         //býr til breytu sem setur player-inn í miðjuna
@@ -145,8 +145,8 @@ function draw() {                                                               
       else {
         x = canvas.width/2;                                                         //reset-ar x gildi
         y = canvas.height-30;                                                       //reset-ar y gildi
-        dx = 4;                                                                     //setur x hraða í 4
-        dy = -4;                                                                    //setur y hraða í 4
+        dx = 6;                                                                     //setur x hraða í 4
+        dy = -6;                                                                    //setur y hraða í 4
         paddleX = (canvas.width-paddleWidth)/2;                                     //setur player kassa á miðjan völlinn
       }
     }
