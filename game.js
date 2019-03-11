@@ -145,8 +145,8 @@ function draw() {                                                               
       else {
         x = canvas.width/2;                                                         //reset-ar x gildi
         y = canvas.height-30;                                                       //reset-ar y gildi
-        dx = 6;                                                                     //setur x hraða í 4
-        dy = -6;                                                                    //setur y hraða í 4
+        dx = 6;                                                                     //setur x hraða í 6
+        dy = -6;                                                                    //setur y hraða í 6
         paddleX = (canvas.width-paddleWidth)/2;                                     //setur player kassa á miðjan völlinn
       }
     }
