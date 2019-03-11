@@ -1,29 +1,29 @@
-var canvas = document.getElementById("myCanvas");                                   //býr til canvas
-var ctx = canvas.getContext("2d");                                                  //býr til context breytu
-var ballRadius = 15;                                                                //til breytu fyrir radius bolta
-var x = canvas.width/2;                                                             //býr til breytu x sem verður í miðju canvas-inu
-var y = canvas.height-30;                                                           //býr til breytu y sem er sett á sérstaka hæð í canvas-inu
-var dx = 4;                                                                         //býr til breytu dx sem setur hraða á x gildin
-var dy = -4;                                                                        //býr til breytu dy sem setur hraða á y gildin
-var paddleHeight = 15;                                                              //býr til breytu fyrir player object-ið height
-var paddleWidth = 150;                                                              //býr til breytu fyrir player object-ið width
-var paddleX = (canvas.width-paddleWidth)/2;                                         //býr til breytu sem setur player-inn í miðjuna
-var rightPressed = false;                                                           //býr til boolean yfir hvort ýtt er á hægri
-var leftPressed = false;                                                            //býr til boolean yfir hvort ýtt er á vinstri
-var brickRowCount = 12;                                                             //býr til breytu yfir fjölda kassa í röð
-var brickColumnCount = 7;                                                           //býr til hversu margar raðir verða
-var brickWidth = 135;                                                               //býr til width-ið fyrir kassana
-var brickHeight = 20;                                                               //býr til hæðina fyrir kassana
-var brickPadding = 10;                                                              //býr til bilið milli kassana
-var brickOffsetTop = 30;                                                            //setur kassana aðeins niður
-var brickOffsetLeft = 45;                                                           //setur kassa aðeins til vinstri
-var score = 0;                                                                      //býr til score og setur það í 0
-var lives = 5;                                                                      //býr til hversu mörg líf þú byrjar með
+let canvas = document.getElementById("myCanvas");                                   //býr til canvas
+let ctx = canvas.getContext("2d");                                                  //býr til context breytu
+let ballRadius = 15;                                                                //til breytu fyrir radius bolta
+let x = canvas.width/2;                                                             //býr til breytu x sem verður í miðju canvas-inu
+let y = canvas.height-30;                                                           //býr til breytu y sem er sett á sérstaka hæð í canvas-inu
+let dx = 4;                                                                         //býr til breytu dx sem setur hraða á x gildin
+let dy = -4;                                                                        //býr til breytu dy sem setur hraða á y gildin
+let paddleHeight = 15;                                                              //býr til breytu fyrir player object-ið height
+let paddleWidth = 150;                                                              //býr til breytu fyrir player object-ið width
+let paddleX = (canvas.width-paddleWidth)/2;                                         //býr til breytu sem setur player-inn í miðjuna
+let rightPressed = false;                                                           //býr til boolean yfir hvort ýtt er á hægri
+let leftPressed = false;                                                            //býr til boolean yfir hvort ýtt er á vinstri
+let brickRowCount = 12;                                                             //býr til breytu yfir fjölda kassa í röð
+let brickColumnCount = 7;                                                           //býr til hversu margar raðir verða
+let brickWidth = 135;                                                               //býr til width-ið fyrir kassana
+let brickHeight = 20;                                                               //býr til hæðina fyrir kassana
+let brickPadding = 10;                                                              //býr til bilið milli kassana
+let brickOffsetTop = 30;                                                            //setur kassana aðeins niður
+let brickOffsetLeft = 45;                                                           //setur kassa aðeins til vinstri
+let score = 0;                                                                      //býr til score og setur það í 0
+let lives = 5;                                                                      //býr til hversu mörg líf þú byrjar með
 
-var bricks = [];                                                                    //býr til array bricks sem setur kassana í raðir
-for(var c=0; c<brickColumnCount; c++) {                                             //for-loop sem skrifar út raðirnar
+let bricks = [];                                                                    //býr til array bricks sem setur kassana í raðir
+for(let c=0; c<brickColumnCount; c++) {                                             //for-loop sem skrifar út raðirnar
   bricks[c] = [];                                                                   
-  for(var r=0; r<brickRowCount; r++) {                                              //for-loop sem skrifar út kassana í röð
+  for(let r=0; r<brickRowCount; r++) {                                              //for-loop sem skrifar út kassana í röð
     bricks[c][r] = { x: 0, y: 0, status: 1 };
   }
 }
@@ -51,15 +51,15 @@ function keyUpHandler(e) {                                                      
 }
 
 function mouseMoveHandler(e) {                                                      //function fyrir mouse movement sem tekur inn x og y hnitana hennar
-  var relativeX = e.clientX - canvas.offsetLeft;
+  let relativeX = e.clientX - canvas.offsetLeft;
   if(relativeX > 0 && relativeX < canvas.width) {
     paddleX = relativeX - paddleWidth/2;
   }
 }
 function collisionDetection() {                                                     //function sem athugar hvort hlutir klessa á hvorn annan
-  for(var c=0; c<brickColumnCount; c++) {                                           //for-loop sem athugar ef status-inn á kassanum er 1,
-    for(var r=0; r<brickRowCount; r++) {                                            //ef það er hitt kassann breytist status-inn hans í 0 og
-      var b = bricks[c][r];                                                         //hann verður tekinn af skjáinum og bætir við 1 í score
+  for(let c=0; c<brickColumnCount; c++) {                                           //for-loop sem athugar ef status-inn á kassanum er 1,
+    for(let r=0; r<brickRowCount; r++) {                                            //ef það er hitt kassann breytist status-inn hans í 0 og
+      let b = bricks[c][r];                                                         //hann verður tekinn af skjáinum og bætir við 1 í score
       if(b.status == 1) {
         if(x > b.x && x < b.x+brickWidth && y > b.y && y < b.y+brickHeight) {
           dy = -dy;
@@ -90,11 +90,11 @@ function drawPaddle() {                                                         
   ctx.closePath();
 }
 function drawBricks() {                                                             //teiknar upp kassana
-  for(var c=0; c<brickColumnCount; c++) {                                           //for-loop sem býr til röð af kössum
-    for(var r=0; r<brickRowCount; r++) {
+  for(let c=0; c<brickColumnCount; c++) {                                           //for-loop sem býr til röð af kössum
+    for(let r=0; r<brickRowCount; r++) {
       if(bricks[c][r].status == 1) {                                                //ef kassin er með status settan á 1 þá er hann birtur
-        var brickX = (r*(brickWidth+brickPadding))+brickOffsetLeft;                 //setur upp kassa með width og padding sem er buið að vera skilgreint
-        var brickY = (c*(brickHeight+brickPadding))+brickOffsetTop;                 //setur upp kassa mep height og padding sem er buið að vera skilgreint
+        let brickX = (r*(brickWidth+brickPadding))+brickOffsetLeft;                 //setur upp kassa með width og padding sem er buið að vera skilgreint
+        let brickY = (c*(brickHeight+brickPadding))+brickOffsetTop;                 //setur upp kassa mep height og padding sem er buið að vera skilgreint
         bricks[c][r].x = brickX;                                                    //setur upp array-in sem brickX
         bricks[c][r].y = brickY;                                                    //setur upp array-in sem brickY
         ctx.beginPath();                                                            
