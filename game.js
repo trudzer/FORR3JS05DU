@@ -55,8 +55,12 @@ function keyUpHandler(e) {                                                      
 
 function mouseMoveHandler(e) {                                                      //function fyrir mouse movement sem tekur inn x og y hnitana hennar
   let relativeX = e.clientX - canvas.offsetLeft;
+  let relativeY = e.clientY - canvas.offsetLeft;
   if(relativeX > 0 && relativeX < canvas.width) {
     paddleX = relativeX - paddleWidth/2;
+  }
+  if(relativeY > 0 && relativeY < canvas.width) {
+    paddleX = relativeY - paddleWidth/2;
   }
 }
 function collisionDetection() {                                                     //function sem athugar hvort hlutir klessa á hvorn annan
