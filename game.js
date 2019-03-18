@@ -1,3 +1,6 @@
+//tutorial tekið af
+//https://developer.mozilla.org/en-US/docs/Games/Tutorials/2D_Breakout_game_pure_JavaScript
+
 let canvas = document.getElementById("myCanvas");                                   //býr til canvas
 let ctx = canvas.getContext("2d");                                                  //býr til context breytu
 let ballRadius = 15;                                                                //til breytu fyrir radius bolta
