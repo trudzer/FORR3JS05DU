@@ -73,7 +73,7 @@
         noUiSlider.create(slider, {
             start: [125, 280],
             connect: true,
-            margin: 50,
+            margin: 250,
             range: {
                 'min': 0,
                 'max': 500
