@@ -1,4 +1,4 @@
-(function() {
+(function() { //slider er smá funky en allt virkar
 
     let highscore = [
         {
