@@ -1,4 +1,4 @@
-(function() {
+(function() { //pure JS, slider virkar en niðurstöður vilja ekki birtast almennilega
 
     let highscore = [
         {
