@@ -1,9 +1,9 @@
-function createNode(element) {
-  return document.createElement(element);
+function createNode(element) { //býr til fall til að búa til hluti í html
+  return document.createElement(element); //býr til sérstaka hlutinn
 }
 
-function append(parent, el) {
-return parent.appendChild(el);
+function append(parent, el) { //lætur út hlutinn í vefsíðuna
+return parent.appendChild(el); //kallar á hlutinn sem var verið að setja upp
 }
 const ul = document.getElementById('concerts'); //nær í concerts id úr html skjalinu
 const url = 'https://apis.is/concerts'; //nær í api dótið af netinu
