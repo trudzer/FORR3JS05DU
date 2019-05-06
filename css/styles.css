@@ -12,7 +12,7 @@ body ul {
 }
 body ul li {
   flex-basis: 20%;
-  display: flex;
+  display: block;
   flex-direction: column;
   margin-bottom: 20px;
   align-items: center;
@@ -54,7 +54,7 @@ body header {
 }
 
 #search {
-  background-image: url('/css/searchicon.png');
+  background-image: url('searchicon.png');
   background-position: 10px 12px;
   background-repeat: no-repeat;
   width: 100%;
@@ -86,7 +86,7 @@ body header {
 }
 
 #date-from {
-  background-image: url('/css/searchicon.png');
+  background-image: url('searchicon.png');
   background-position: 10px 12px;
   background-repeat: no-repeat;
   width: 5%;
@@ -99,7 +99,7 @@ body header {
 }
 
 #date-to {
-  background-image: url('/css/searchicon.png');
+  background-image: url('searchicon.png');
   background-position: 10px 12px;
   background-repeat: no-repeat;
   width: 5%;

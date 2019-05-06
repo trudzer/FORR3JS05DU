@@ -4,20 +4,23 @@
 	<meta charset="utf-8">
   <title>verkefni 7</title>
   <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
 </head>
 <body>
 	<header>
 		<h1>Lokaverkefni Úlfur Ingólfsson</h1>
 	</header>
 	<input type="text" id="search" onkeyup="searchFunction()" placeholder="Search">
-	<input type="text" id="date-to" placeholder="date to">
-	<input type="text" id="date-from" placeholder="date from">
+	<input type="text" name="daterange" value="05/01/2018 - 015/05/2018" />
   <ul id="concerts"></ul>
   <footer>
   	<hr>
   <p>Úlfur Ingólfsson - Vor önn 2019</p>
   <a href="https://www.github.com/trudzer">Github - Trudzer</a>
 </footer>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
   <script src="js/moment.js"></script>
   <script src="js/script.js"></script>
 </body>
